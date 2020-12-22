@@ -71,10 +71,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build and test
+    - name: Install
       run: |
         pwd
         chmod +x install.sh
         ./install.sh
+    - name: Build and test
+      run: |
         python3 --version
-        /open_spiel/scripts/travis_script.sh
+        ./open_spiel/scripts/travis_script.sh
